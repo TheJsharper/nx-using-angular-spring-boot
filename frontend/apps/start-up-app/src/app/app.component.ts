@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { newPlot } from 'plotly.js-dist-min';
+import { Layout, PlotMouseEvent, PlotlyHTMLElement, newPlot } from 'plotly.js-dist-min';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -70,14 +70,19 @@ export class AppComponent implements OnInit, OnDestroy {
     };
 
     const data = [trace1, trace2, trace3];
-    const layout = {
+    const layout: Partial<Layout> = {
       title: 'Adding Names to Line and Scatter Plot',
+      width: 1800, height: 800, plot_bgcolor: '#cccccc'
 
     };
     const myDiv = this.renderer.createElement('div');
-     await newPlot(myDiv, data, {width:1800, height:800, plot_bgcolor: '#cccccc'}, {responsive:true, scrollZoom:false,});
-    
-    
+    const plotly: PlotlyHTMLElement = await newPlot(myDiv, data, { ...layout }, { responsive: true, scrollZoom: false, });
+
+    console.log("DATA", plotly.data);
+
+    plotly.on('plotly_click', (ev: PlotMouseEvent) => { console.log("onclick", ev); return true; })
+
+
 
     this.renderer.appendChild(this.el.nativeElement, myDiv);
 

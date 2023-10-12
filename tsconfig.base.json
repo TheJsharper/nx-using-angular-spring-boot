@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-using-angular-spring-boot/shared": ["frontend/libs/src/index.ts"],
       "@undefined/api-fetch": ["libs/api-fetch/src/index.ts"]
     }
   },

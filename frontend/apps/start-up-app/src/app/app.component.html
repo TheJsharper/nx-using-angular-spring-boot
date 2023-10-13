@@ -1,5 +1,18 @@
 <!-- 
 <nx-using-angular-spring-boot-nx-plotly-lib-plotly></nx-using-angular-spring-boot-nx-plotly-lib-plotly>
 <nx-using-angular-spring-boot-sticky-table-footer></nx-using-angular-spring-boot-sticky-table-footer> -->
+<p>
+    <!-- #docregion toolbar-simple -->
+    <mat-toolbar>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink] = "['/plotly']">Plotly</button>
+            <button mat-menu-item [routerLink] = "['/footer-sticky-mat-table']"> Footer sticky Table</button>
+          </mat-menu>
+    </mat-toolbar>
+    <!-- #enddocregion toolbar-simple -->
+</p>
 
 <router-outlet></router-outlet>

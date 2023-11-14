@@ -8,6 +8,10 @@ import { Layout, PlotMouseEvent, PlotlyHTMLElement, newPlot } from "plotly.js-di
 })
 export class LibPlotkyComponent implements OnInit {
     constructor(private renderer: Renderer2, private el: ElementRef) { }
+   
+   
+   
+   
     async ngOnInit(): Promise<void> {
         const trace1 = {
             x: [1, 2, 3, 4],
@@ -38,6 +42,7 @@ export class LibPlotkyComponent implements OnInit {
         };
         const myDiv = this.renderer.createElement('div');
         const plotly: PlotlyHTMLElement = await newPlot(myDiv, data, { ...layout }, { responsive: true, scrollZoom: false, });
+
 
         console.log("DATA", plotly.data);
 

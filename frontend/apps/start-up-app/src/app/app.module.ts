@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { MatMenuModule } from "@angular/material/menu";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { MatIconModule } from "@angular/material/icon";
-import { MatButtonModule } from "@angular/material/button";
-import { MatMenuModule } from "@angular/material/menu";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Routes } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { AppComponent } from './app.component';
+import { appReducers, metaReducers } from './store/app.reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 const routes: Routes = [
   {
     path: 'plotly',
@@ -23,7 +26,12 @@ const routes: Routes = [
 ]
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule,  BrowserAnimationsModule,  RouterModule.forRoot(routes), MatToolbarModule, MatIconModule, MatButtonModule, MatMenuModule, BrowserAnimationsModule],
+  imports: [BrowserModule, BrowserAnimationsModule,
+    RouterModule.forRoot(routes),
+    StoreModule.forRoot(appReducers, { metaReducers }),
+    StoreDevtoolsModule.instrument({maxAge:25, logOnly:true}),
+    MatToolbarModule, MatIconModule,
+    MatButtonModule, MatMenuModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

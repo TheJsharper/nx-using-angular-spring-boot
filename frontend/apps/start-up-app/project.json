@@ -21,9 +21,7 @@
         ],
         "styles": ["frontend/apps/start-up-app/src/styles.scss"],
         "scripts": [],
-        "allowedCommonJsDependencies": [
-          "plotly.js-dist-min"
-        ]
+        "allowedCommonJsDependencies": ["plotly.js-dist-min"]
       },
       "configurations": {
         "production": {

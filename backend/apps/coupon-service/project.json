@@ -1,0 +1,81 @@
+{
+  "name": "coupon-service",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "backend/apps/coupon-service/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "backend/apps/coupon-service"
+      },
+      "dependsOn": [
+        "^install"
+      ],
+      "outputs": [
+        "{workspaceRoot}/backend/apps/coupon-service/target"
+      ]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-spring-boot:install",
+      "options": {
+        "root": "backend/apps/coupon-service"
+      },
+      "dependsOn": [
+        "^install"
+      ],
+      "outputs": [
+        "{workspaceRoot}/backend/apps/coupon-service/target"
+      ]
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "backend/apps/coupon-service"
+      },
+      "outputs": [
+        "{workspaceRoot}/backend/apps/coupon-service/target"
+      ]
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "backend/apps/coupon-service"
+      }
+    },
+    "run": {
+      "executor": "@nxrocks/nx-spring-boot:run",
+      "options": {
+        "root": "backend/apps/coupon-service"
+      },
+      "dependsOn": [
+        "^install"
+      ]
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-spring-boot:serve",
+      "options": {
+        "root": "backend/apps/coupon-service"
+      },
+      "dependsOn": [
+        "^install"
+      ]
+    },
+    "build-image": {
+      "executor": "@nxrocks/nx-spring-boot:build-image",
+      "options": {
+        "root": "backend/apps/coupon-service"
+      },
+      "outputs": [
+        "{workspaceRoot}/backend/apps/coupon-service/target"
+      ]
+    },
+    "build-info": {
+      "executor": "@nxrocks/nx-spring-boot:build-info",
+      "options": {
+        "root": "backend/apps/coupon-service"
+      }
+    }
+  },
+  "tags": []
+}

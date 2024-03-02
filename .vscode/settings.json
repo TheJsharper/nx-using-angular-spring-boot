@@ -1,12 +1,12 @@
 {
     "java.compile.nullAnalysis.mode": "automatic",
     "java.configuration.updateBuildConfiguration": "automatic",
-    "java.jdt.ls.java.home": "c:\\sdkman\\candidates\\java\\current\\",
-    "java.home": "c:\\sdkman\\candidates\\java\\current\\",
+    "java.jdt.ls.java.home": "/home/pedro/.sdkman/candidates/java/17.0.10-zulu/",
+    "java.home": "/home/pedro/.sdkman/candidates/java/17.0.10-zulu/",
     "java.configuration.runtimes": [
 
         
-        {"name": "JavaSE-17", "path": "c:\\sdkman\\candidates\\java\\current\\", "default": true},
-        {"name": "JavaSE-21", "path": "C:\\sdkman\\candidates\\java\\21.0.1-oracle", }
+        {"name": "JavaSE-17", "path": "/home/pedro/.sdkman/candidates/java/17.0.10-zulu/", "default": true},
+        {"name": "JavaSE-21", "path": "/home/pedro/.sdkman/candidates/java/21.0.2-zulu", }
     ],
 }

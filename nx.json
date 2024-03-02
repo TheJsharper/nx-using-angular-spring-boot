@@ -40,6 +40,9 @@
         "{workspaceRoot}/eslint.config.js"
       ],
       "cache": true
+    },
+    "install": {
+      "cache": true
     }
   },
   "namedInputs": {

@@ -1,4 +1,4 @@
-package main.java.com.jsharper.product.service.models;
+package com.jsharper.product.service.models;
 
 import java.math.BigDecimal;
 import jakarta.persistence.Entity;

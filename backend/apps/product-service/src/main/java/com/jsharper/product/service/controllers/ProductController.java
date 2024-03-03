@@ -26,7 +26,6 @@ public class ProductController {
     
     @RequestMapping(value="/products",  method = RequestMethod.POST)
     public Product create(@RequestBody Product product){
-        System.out.println("====>x"+product);
         return productRepository.save(product);
     }
 

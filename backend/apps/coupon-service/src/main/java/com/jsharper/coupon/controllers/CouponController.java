@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jsharper.coupon.models.Coupon;
 import com.jsharper.coupon.repositories.CouponRepository;
+import java.util.List;
+
 
 import lombok.Getter;
 
@@ -33,5 +35,10 @@ public class CouponController {
     @RequestMapping(value="/coupons/{code}", method = RequestMethod.GET)
     public Coupon getByCode(@PathVariable("code") String code){
         return couponRepository.findByCode(code);
+    }
+
+    @RequestMapping(value="/coupons", method = RequestMethod.GET)
+    public List<Coupon> getAll(){
+        return couponRepository.findAll();
     }
 }

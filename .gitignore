@@ -42,3 +42,4 @@ Thumbs.db
 
 .nx/cache
 .settings.json
+.vscode/settings.json

@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CouponServiceApplication",
+            "request": "launch",
+            "mainClass": "com.jsharper.coupon.CouponServiceApplication",
+            "projectName": "coupon-service"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-StartUpAppApplication<start-up-app>",
             "request": "launch",
             "cwd": "${workspaceFolder}",

@@ -6,6 +6,6 @@
 
         
         {"name": "JavaSE-17", "path": "C:\\sdkman\\candidates\\java\\17.0.8-oracle", "default": true},
-        {"name": "JavaSE-21", "path": "C:\\sdkman\\candidates\\java\\21.0.1-oracle", }
+        {"name": "JavaSE-21", "path": "C:\\sdkman\\candidates\\java\\21.0.1-oracle" }
     ],
 }

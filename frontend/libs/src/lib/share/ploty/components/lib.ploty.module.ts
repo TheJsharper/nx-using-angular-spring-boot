@@ -23,7 +23,7 @@ const routes: Routes = [
     imports: [CommonModule,
         StoreModule.forFeature('plotly', plotlyReducer),
         RouterModule.forChild(routes)],
-    providers: [LibPlotkyService]
+   providers: [LibPlotkyService]
 })
 
 export class LibPlotyModule { }

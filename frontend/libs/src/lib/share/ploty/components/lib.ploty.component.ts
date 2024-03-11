@@ -13,7 +13,7 @@ export class LibPlotkyComponent implements OnInit {
    
    
     async ngOnInit(): Promise<void> {
-        const trace1 = {
+        /**/const trace1 = {
             x: [1, 2, 3, 4],
             y: [10, 15, 13, 17],
             mode: 'markers',
@@ -40,8 +40,9 @@ export class LibPlotkyComponent implements OnInit {
             width: 1800, height: 800, plot_bgcolor: '#cccccc'
 
         };
-        const myDiv = this.renderer.createElement('div');
-        const plotly: PlotlyHTMLElement = await newPlot(myDiv, data, { ...layout }, { responsive: true, scrollZoom: false, });
+
+        const plotly: PlotlyHTMLElement = await newPlot(this.el.nativeElement, data, { ...layout }, { responsive: true, scrollZoom: false, });
+        //plotly.
 
 
         console.log("DATA", plotly.data);
@@ -50,6 +51,5 @@ export class LibPlotkyComponent implements OnInit {
 
 
 
-        this.renderer.appendChild(this.el.nativeElement, myDiv);
     }
 }

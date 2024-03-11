@@ -12,9 +12,12 @@ import { plotlyLoadedDataAction } from "../../store/lib.ploty.actions";
 
 export const plotlyResolver: ResolveFn<Data[]> =
   () => {
-    console.log("Calling ");
+    const state =inject(Store<PlotyState>);
 
-    return inject(LibPlotkyService).getDataPlot()
-      .pipe(
-        tap((value: Data[]) => inject(Store<PlotyState>).dispatch(plotlyLoadedDataAction({ data: value }))));
+     const service =inject(LibPlotkyService).getDataPlot();
+
+     service.pipe(tap((value:Data[])=>{
+      state.dispatch(plotlyLoadedDataAction({data:value}))
+     }))
+     return service;
   };

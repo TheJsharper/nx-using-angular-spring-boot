@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('@nx-using-angular-spring-boot/shared').then(m => m.LibStickyTableFooterModule)
   },
   {
+    path:'primeng-table',
+    loadComponent: ()=> import('@nx-using-angular-spring-boot/primeng-table').then( c=> c.PrimengTableComponent)
+  },
+  {
     path: '**',
     redirectTo: 'plotly'
   }

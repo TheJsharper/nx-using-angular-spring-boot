@@ -19,6 +19,9 @@
       "@nx-using-angular-spring-boot/lazyForm": [
         "frontend/libs/lazyForm/src/index.ts"
       ],
+      "@nx-using-angular-spring-boot/primeng-table": [
+        "frontend/libs/primeng-table/src/index.ts"
+      ],
       "@nx-using-angular-spring-boot/shared": ["frontend/libs/src/index.ts"],
       "@undefined/api-fetch": ["libs/api-fetch/src/index.ts"]
     }

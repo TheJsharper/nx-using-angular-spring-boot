@@ -19,8 +19,10 @@
           "frontend/apps/start-up-app/src/favicon.ico",
           "frontend/apps/start-up-app/src/assets"
         ],
-        "styles": ["frontend/apps/start-up-app/src/styles.scss"],
-        "scripts": [],
+        "styles": ["frontend/apps/start-up-app/src/styles.scss", 
+        "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+      "node_modules/primeng/resources/primeng.min.css"],
+        "scripts": [ ],
         "allowedCommonJsDependencies": ["plotly.js-dist-min"]
       },
       "configurations": {

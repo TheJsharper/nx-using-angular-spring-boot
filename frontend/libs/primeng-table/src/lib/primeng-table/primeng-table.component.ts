@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Product } from './domain/product.model';
@@ -18,9 +18,11 @@ import {RatingModule} from 'primeng/rating';
 @Component({
   selector: 'nx-using-angular-spring-boot-primeng-table',
   standalone: true,
-  imports: [CommonModule, ButtonModule, FormsModule, InputTextModule, 
+  imports: [CommonModule, ButtonModule, FormsModule, InputTextModule, ReactiveFormsModule,
     TableModule,DialogModule, ToastModule, ToolbarModule, FileUploadModule, DropdownModule, ConfirmDialogModule, TagModule, RatingModule],
-  providers:[MessageService, ConfirmationService, ProductService],
+  providers:[MessageService, ConfirmationService, ProductService, {
+    provide:NG_VALUE_ACCESSOR, useExisting: forwardRef(()=> new FormControl()), multi:true
+  }],
   templateUrl: './primeng-table.component.html',
   styleUrl: './primeng-table.component.scss',
 })

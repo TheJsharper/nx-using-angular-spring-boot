@@ -1,4 +1,4 @@
-const { NxWebpackPlugin } = require('@nx/webpack');
+const { NxWebpackPlugin , ModuleFederationPlugin} = require('@nx/webpack');
 const { join } = require('path');
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     port: 4200,
   },
   plugins: [
-    new NxWebpackPlugin({
+    new ModuleFederationPlugin({
       
       main: './src/main.ts',
       tsConfig: './tsconfig.app.json',

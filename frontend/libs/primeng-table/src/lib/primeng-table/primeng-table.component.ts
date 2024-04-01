@@ -1,47 +1,64 @@
-import { Component, OnInit, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonModule } from 'primeng/button';
-import { FormControl, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
-import { InputTextModule } from 'primeng/inputtext';
+import { Component, OnInit, forwardRef } from '@angular/core';
+import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { FileUploadModule } from 'primeng/fileupload';
+import { InputTextModule } from 'primeng/inputtext';
+import { RatingModule } from 'primeng/rating';
+import { TableModule } from 'primeng/table';
+import { TagModule } from 'primeng/tag';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
 import { Product } from './domain/product.model';
 import { ProductService } from './services/product.service';
-import {TableModule} from 'primeng/table';
-import {DialogModule} from 'primeng/dialog';
-import {ToastModule} from 'primeng/toast';
-import {ToolbarModule} from 'primeng/toolbar';
-import {FileUploadModule} from 'primeng/fileupload';
-import {DropdownModule} from 'primeng/dropdown';
-import {ConfirmDialogModule} from 'primeng/confirmdialog';
-import {TagModule} from 'primeng/tag';
-import {RatingModule} from 'primeng/rating';
 @Component({
   selector: 'nx-using-angular-spring-boot-primeng-table',
   standalone: true,
   imports: [CommonModule, ButtonModule, FormsModule, InputTextModule, ReactiveFormsModule,
     TableModule,DialogModule, ToastModule, ToolbarModule, FileUploadModule, DropdownModule, ConfirmDialogModule, TagModule, RatingModule],
-  providers:[MessageService, ConfirmationService, ProductService, {
-    provide:NG_VALUE_ACCESSOR, useExisting: forwardRef(()=> new FormControl()), multi:true
-  }],
+  providers:[ProductService, MessageService, ConfirmationService, {provide:NG_VALUE_ACCESSOR, useExisting: forwardRef(()=> PrimengTableComponent), multi:true}],
   templateUrl: './primeng-table.component.html',
   styleUrl: './primeng-table.component.scss',
 })
-export class PrimengTableComponent implements OnInit{
-  msg ='';
-  productDialog= false;
-
+export class PrimengTableComponent implements OnInit,  ControlValueAccessor{
+    msg ='';
+    productDialog= false;
+    
   products!: Product[];
 
   product!: Product;
-
+  
   selectedProducts!: Product[] | null;
-
+  
   submitted= false;
-
+  
   statuses!: { label: string, value: string }[];
-
+  private data: any;
+  
+  
   constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) {}
-
+  writeValue(obj: any): void {
+      if (obj) {
+            this.data = obj;
+            // this will format it with 4 character spacing
+            JSON.stringify(this.data, undefined, 4); 
+        }
+    }
+    registerOnChange(fn: any): void {
+        this.propagateChange = fn;
+    }
+    registerOnTouched(fn: any): void {
+        this.propagateChange = fn;
+    }
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    setDisabledState?(isDisabled: boolean): void {  }
+ // the method set in registerOnChange to emit changes back to the form
+ // eslint-disable-next-line @typescript-eslint/no-empty-function
+ private propagateChange = (_: any) => { };
   ngOnInit() {
       this.productService.getProducts().then((data) => (this.products = data));
 

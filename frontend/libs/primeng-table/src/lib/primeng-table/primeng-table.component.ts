@@ -4,7 +4,7 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModu
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { DialogModule } from 'primeng/dialog';
+import { DialogModule,  Dialog } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextModule } from 'primeng/inputtext';
@@ -20,7 +20,7 @@ import { ProductService } from './services/product.service';
   standalone: true,
   imports: [CommonModule, ButtonModule, FormsModule, InputTextModule, ReactiveFormsModule,
     TableModule,DialogModule, ToastModule, ToolbarModule, FileUploadModule, DropdownModule, ConfirmDialogModule, TagModule, RatingModule],
-  providers:[ProductService, MessageService, ConfirmationService, {provide:NG_VALUE_ACCESSOR, useExisting: forwardRef(()=> PrimengTableComponent), multi:true}],
+  providers:[ProductService, MessageService, ConfirmationService, {provide:NG_VALUE_ACCESSOR, useExisting: forwardRef(()=> Dialog), multi:true}],
   templateUrl: './primeng-table.component.html',
   styleUrl: './primeng-table.component.scss',
 })

@@ -10,6 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { AppComponent } from './app.component';
 import { appReducers, metaReducers } from './store/app.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: 'plotly',
@@ -35,7 +36,7 @@ const routes: Routes = [
     StoreModule.forRoot(appReducers, { metaReducers }),
     StoreDevtoolsModule.instrument({maxAge:25, logOnly:true}),
     MatToolbarModule, MatIconModule,
-    MatButtonModule, MatMenuModule, BrowserAnimationsModule],
+    MatButtonModule, MatMenuModule, BrowserAnimationsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

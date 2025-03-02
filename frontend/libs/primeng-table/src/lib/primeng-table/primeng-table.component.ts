@@ -8,10 +8,12 @@ import { DialogModule,  Dialog } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { RatingModule } from 'primeng/rating';
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
 import { ToastModule } from 'primeng/toast';
+import { RadioButtonModule } from 'primeng/radiobutton';
 import { ToolbarModule } from 'primeng/toolbar';
 import { Product } from './domain/product.model';
 import { ProductService } from './services/product.service';
@@ -19,7 +21,7 @@ import { ProductService } from './services/product.service';
   selector: 'nx-using-angular-spring-boot-primeng-table',
   standalone: true,
   imports: [CommonModule, ButtonModule, FormsModule, InputTextModule, ReactiveFormsModule,
-    TableModule,DialogModule, ToastModule, ToolbarModule, FileUploadModule, DropdownModule, ConfirmDialogModule, TagModule, RatingModule],
+    TableModule,DialogModule, ToastModule, ToolbarModule, FileUploadModule, DropdownModule, ConfirmDialogModule, TagModule, RatingModule, RadioButtonModule, InputNumberModule],
   providers:[ProductService, MessageService, ConfirmationService, {provide:NG_VALUE_ACCESSOR, useExisting: forwardRef(()=> Dialog), multi:true}],
   templateUrl: './primeng-table.component.html',
   styleUrl: './primeng-table.component.scss',

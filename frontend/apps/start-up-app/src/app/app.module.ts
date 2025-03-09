@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: 'plotly',
-    loadChildren: () => import('@nx-using-angular-spring-boot/shared').then(m => m.LibPlotyModule)
+    loadComponent: () => import('@nx-using-angular-spring-boot/plotly-view').then(m => m.PlotlyViewComponent)
   },
   {
     path: 'footer-sticky-mat-table',

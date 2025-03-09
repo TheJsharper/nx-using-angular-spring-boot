@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-using-angular-spring-boot/footer-table-view": [
+        "frontend/libs/footer-table-view/src/index.ts"
+      ],
       "@nx-using-angular-spring-boot/form": ["frontend/libs/form/src/index.ts"],
       "@nx-using-angular-spring-boot/lazyForm": [
         "frontend/libs/lazyForm/src/index.ts"

@@ -18,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'footer-sticky-mat-table',
-    loadChildren: () => import('@nx-using-angular-spring-boot/shared').then(m => m.LibStickyTableFooterModule)
+    loadComponent: () => import('@nx-using-angular-spring-boot/footer-table-view').then(m => m.FooterTableViewComponent)
   },
   {
     path:'primeng-table',

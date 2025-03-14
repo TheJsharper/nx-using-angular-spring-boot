@@ -163,7 +163,7 @@ export class PrimengTableComponent implements OnInit, ControlValueAccessor {
                 return 'warning';
             case 'OUTOFSTOCK':
                 return 'danger';
-            default: return 'NONE';
+            default: return undefined;
         }
     }
 }

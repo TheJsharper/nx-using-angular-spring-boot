@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { appReducers, metaReducers } from './store/app.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 const routes: Routes = [
   {
     path: 'plotly',
@@ -22,7 +23,8 @@ const routes: Routes = [
   },
   {
     path:'primeng-table',
-    loadComponent: ()=> import('@nx-using-angular-spring-boot/primeng-table').then( c=> c.PrimengTableComponent)
+    loadComponent: ()=> import('@nx-using-angular-spring-boot/primeng-table').then( c=> c.PrimengTableComponent),
+    providers:[provideHttpClient()]
   },
   {
     path: '**',

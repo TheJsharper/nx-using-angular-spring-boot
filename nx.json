@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "affected": {
-    "defaultBase": "master"
-  },
   "workspaceLayout": {
     "projectNameAndRootFormat": "as-provided"
   },
@@ -71,5 +68,6 @@
         "accessToken": "YWY0ZGE2NWUtNGFhZC00MDFlLWI3ZTYtNmQxOTdlZmJmYThmfHJlYWQtd3JpdGU="
       }
     }
-  }
+  },
+  "defaultBase": "master"
 }

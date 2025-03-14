@@ -19,7 +19,7 @@
     "@nx/eslint-plugin": "19.8.9",
     "@nx/jest": "19.8.9",
     "@nx/js": "19.8.9",
-    "@nx/linter": "19.8.9",
+    "@nx/linter": "19.8.14",
     "@nx/web": "19.8.9",
     "@nx/workspace": "19.8.9",
     "@nxrocks/nx-spring-boot": "10.2.0",

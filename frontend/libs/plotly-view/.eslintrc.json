@@ -24,7 +24,8 @@
             "prefix": "nx-using-angular-spring-boot",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "@angular-eslint/prefer-standalone": "off"
       }
     },
     {

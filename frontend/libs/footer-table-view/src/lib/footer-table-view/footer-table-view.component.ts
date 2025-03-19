@@ -23,11 +23,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
 ];
 @Component({
-  selector: 'nx-using-angular-spring-boot-footer-table-view',
-  standalone: true,
-  imports: [CommonModule, MatExpansionModule, MatTableModule, ],
-  templateUrl: './footer-table-view.component.html',
-  styleUrl: './footer-table-view.component.scss',
+    selector: 'nx-using-angular-spring-boot-footer-table-view',
+    imports: [CommonModule, MatExpansionModule, MatTableModule,],
+    templateUrl: './footer-table-view.component.html',
+    styleUrl: './footer-table-view.component.scss'
 })
 export class FooterTableViewComponent implements OnInit, OnDestroy {
     panelOpenState = false;

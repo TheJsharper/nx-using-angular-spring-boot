@@ -9,7 +9,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+//import { InputTextareaModule } from 'primeng/inputtextarea';
 import { RatingModule } from 'primeng/rating';
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
@@ -20,18 +20,19 @@ import { Product } from './domain/product.model';
 import { ProductService } from './services/product.service';
 @Component({
     selector: 'nx-using-angular-spring-boot-primeng-table',
-    standalone: true,
     imports: [CommonModule, ButtonModule, FormsModule, InputTextModule, ReactiveFormsModule,
-        TableModule, DialogModule, ToastModule, ToolbarModule, FileUploadModule, DropdownModule, ConfirmDialogModule, TagModule, RatingModule, RadioButtonModule, InputNumberModule, InputTextareaModule],
+        TableModule, DialogModule, ToastModule, ToolbarModule, FileUploadModule, DropdownModule, 
+        ConfirmDialogModule, TagModule, RatingModule, RadioButtonModule, InputNumberModule,
+         /*InputTextareaModule*/],
     providers: [ProductService, MessageService, ConfirmationService, { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => Dialog), multi: true }],
     templateUrl: './primeng-table.component.html',
-    styleUrl: './primeng-table.component.scss',
+    styleUrl: './primeng-table.component.scss'
 })
 export class PrimengTableComponent implements OnInit, ControlValueAccessor {
     msg = '';
     productDialog = false;
 
-    products!: Product[];
+    products: Product[] = [];
 
     product!: Product;
 
@@ -63,7 +64,7 @@ export class PrimengTableComponent implements OnInit, ControlValueAccessor {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     private propagateChange = (_: any) => { };
     ngOnInit() {
-        this.productService.getProducts().then((data) => (this.products = data));
+        this.productService.getProducts().then((data:Product[] ) => (this.products = data));
 
         this.statuses = [
             { label: 'INSTOCK', value: 'instock' },
@@ -155,12 +156,12 @@ export class PrimengTableComponent implements OnInit, ControlValueAccessor {
         return id;
     }
 
-    getSeverity(status: string | undefined) {
+    getSeverity(status: 'INSTOCK' | 'LOWSTOCK'  | 'OUTOFSTOCK' | undefined):'success' | 'secondary' | 'info' | 'warn' | 'danger' | 'contrast' | undefined {
         switch (status) {
             case 'INSTOCK':
                 return 'success';
             case 'LOWSTOCK':
-                return 'warning';
+                return 'danger';
             case 'OUTOFSTOCK':
                 return 'danger';
             default: return undefined;

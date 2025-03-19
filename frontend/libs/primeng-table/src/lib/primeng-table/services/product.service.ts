@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { Product } from '../domain/product.model';
     
 @Injectable()
 export class ProductService {
-    getProductsData() {
+    getProductsData(): Product[] {
         return [
             {
                 id: '1000',

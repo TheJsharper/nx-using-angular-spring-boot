@@ -60,14 +60,7 @@
     }
   },
   "plugins": ["@nxrocks/nx-spring-boot"],
-  "nxCloudAccessToken": "YjRjYTljOTItYTRjMy00ZDk0LWFiMTMtOWUwODMwMDI2ZWMyfHJlYWQtd3JpdGU=",
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx-cloud",
-      "options": {
-        "accessToken": "YWY0ZGE2NWUtNGFhZC00MDFlLWI3ZTYtNmQxOTdlZmJmYThmfHJlYWQtd3JpdGU="
-      }
-    }
-  },
-  "defaultBase": "master"
+  "nxCloudAccessToken": "YWY0ZGE2NWUtNGFhZC00MDFlLWI3ZTYtNmQxOTdlZmJmYThmfHJlYWQtd3JpdGU=",
+  "defaultBase": "master",
+  "useLegacyCache": true
 }

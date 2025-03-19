@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { Layout, PlotMouseEvent, PlotlyHTMLElement, newPlot } from "plotly.js-dist-min";
 
 @Component({
-  selector: 'nx-using-angular-spring-boot-plotly-view',
-  standalone: true,
-  imports: [CommonModule],
-  template: `<div id="plotly"></div>`,
+    selector: 'nx-using-angular-spring-boot-plotly-view',
+    imports: [CommonModule],
+    template: `<div id="plotly"></div>`
 })
 export class PlotlyViewComponent implements OnInit {
   constructor(private renderer: Renderer2, private el: ElementRef) { }

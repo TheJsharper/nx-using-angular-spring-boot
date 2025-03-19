@@ -41,28 +41,28 @@ export class PrimengTableComponent implements OnInit, ControlValueAccessor {
     submitted = false;
 
     statuses!: { label: string, value: string }[];
-    private data: any;
+    private data: unknown;
 
 
     constructor(private productService: ProductService, private messageService: MessageService, private confirmationService: ConfirmationService) { }
-    writeValue(obj: any): void {
+    writeValue(obj: unknown): void {
         if (obj) {
             this.data = obj;
             // this will format it with 4 character spacing
             JSON.stringify(this.data, undefined, 4);
         }
     }
-    registerOnChange(fn: any): void {
+    registerOnChange(fn: (value: unknown) => void): void {
         this.propagateChange = fn;
     }
-    registerOnTouched(fn: any): void {
+    registerOnTouched(fn: () => void): void {
         this.propagateChange = fn;
     }
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    setDisabledState?(isDisabled: boolean): void { }
-    // the method set in registerOnChange to emit changes back to the form
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    private propagateChange = (_: any) => { };
+    setDisabledState?(): void { }
+
+    // eslint-disable-next-line @typescript-eslint/no-empty-function, @typescript-eslint/no-unused-vars
+    private propagateChange = (_: unknown) => { };
     ngOnInit() {
         this.productService.getProducts().then((data:Product[] ) => (this.products = data));
 
